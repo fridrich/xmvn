@@ -94,6 +94,7 @@
     <dependencyPluginVersion>3.11.0</dependencyPluginVersion>
     <deployPluginVersion>3.1.4</deployPluginVersion>
     <easymockVersion>5.6.0</easymockVersion>
+    <googleJavaFormatVersion>1.24.0</googleJavaFormatVersion>
     <gpgPluginVersion>3.2.8</gpgPluginVersion>
     <injectionApiVersion>1</injectionApiVersion>
     <installPluginVersion>3.1.4</installPluginVersion>
@@ -105,7 +106,6 @@
     <mavenWagonVersion>1.0</mavenWagonVersion>
     <modelloVersion>2.4.0</modelloVersion>
     <nexusStagingPluginVersion>1.7.0</nexusStagingPluginVersion>
-    <palantirJavaFormatVersion>2.39.0</palantirJavaFormatVersion>
     <pmdPluginVersion>3.0.1</pmdPluginVersion>
     <projectInfoReportsPluginVersion>3.9.0</projectInfoReportsPluginVersion>
     <ratPluginVersion>0.16.1</ratPluginVersion>
@@ -344,10 +344,11 @@
           <version>${spotlessVersion}</version>
           <configuration>
             <java>
-              <palantirJavaFormat>
-                <version>${palantirJavaFormatVersion}</version>
+              <googleJavaFormat>
+                <version>${googleJavaFormatVersion}</version>
+                <style>AOSP</style>
                 <formatJavadoc>true</formatJavadoc>
-              </palantirJavaFormat>
+              </googleJavaFormat>
               <removeUnusedImports/>
               <formatAnnotations/>
               <importOrder/>
