@@ -108,7 +108,7 @@
     <nexusStagingPluginVersion>1.7.0</nexusStagingPluginVersion>
     <pmdPluginVersion>3.0.1</pmdPluginVersion>
     <projectInfoReportsPluginVersion>3.9.0</projectInfoReportsPluginVersion>
-    <ratPluginVersion>0.16.1</ratPluginVersion>
+    <ratPluginVersion>0.17</ratPluginVersion>
     <resourcesPluginVersion>3.5.0</resourcesPluginVersion>
     <sisuVersion>1.0.1</sisuVersion>
     <sitePluginVersion>3.22.0</sitePluginVersion>
@@ -383,10 +383,10 @@
           <artifactId>apache-rat-plugin</artifactId>
           <version>${ratPluginVersion}</version>
           <configuration>
-            <excludes>
-              <exclude>src/test/resources/**</exclude>
-              <exclude>src/test/resources-filtered/**</exclude>
-            </excludes>
+            <inputExcludes>
+              <inputExclude>src/test/resources/**</inputExclude>
+              <inputExclude>src/test/resources-filtered/**</inputExclude>
+            </inputExcludes>
           </configuration>
         </plugin>
         <plugin>
