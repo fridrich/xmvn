@@ -15,6 +15,7 @@
  */
 package org.fedoraproject.xmvn.connector.maven;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -37,7 +38,8 @@ class DependencyVersionReportGenerator extends AbstractExecutionListener
         implements ResolutionListener {
     private final Logger logger;
 
-    private final Map<Artifact, ResolutionResult> data = new LinkedHashMap<>();
+    private final Map<Artifact, ResolutionResult> data =
+            Collections.synchronizedMap(new LinkedHashMap<>());
 
     public DependencyVersionReportGenerator(Logger logger) {
         this.logger = logger;

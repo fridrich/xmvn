@@ -26,8 +26,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -142,7 +144,7 @@ public class XMvnMojoExecutionListener implements ResolutionListener {
         trySetBeanProperty(buildPluginManager, "mavenPluginManager", proxy);
     }
 
-    private final List<String[]> resolutions = new ArrayList<>();
+    private final List<String[]> resolutions = Collections.synchronizedList(new ArrayList<>());
 
     private static String getBeanProperty(Object bean, String... getterNames) {
         try {
@@ -259,10 +261,15 @@ public class XMvnMojoExecutionListener implements ResolutionListener {
             // maven-javadoc-plugin >= 3.0.0
             trySetBeanProperty(mojo, "additionalOptions", new String[] {"-Xdoclint:none"});
         } else if (XMVN_BUILDDEP.equals(execution)) {
+            List<String[]> sortedResolutions;
+            synchronized (resolutions) {
+                sortedResolutions =
+                        resolutions.stream()
+                                .sorted(Comparator.comparing(a -> a[0]))
+                                .collect(Collectors.toList());
+            }
             trySetBeanProperty(
-                    mojo,
-                    "resolutions",
-                    Collections.unmodifiableList(new ArrayList<>(resolutions)));
+                    mojo, "resolutions", Collections.unmodifiableList(sortedResolutions));
         }
     }
 

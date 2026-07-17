@@ -17,9 +17,9 @@ package org.fedoraproject.xmvn.connector.maven;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -40,7 +40,7 @@ public class XMvnWorkspaceReader implements WorkspaceReader {
 
     private static final WorkspaceRepository REPOSITORY = new WorkspaceRepository();
 
-    private final List<ResolutionListener> listeners = new ArrayList<>();
+    private final List<ResolutionListener> listeners = new CopyOnWriteArrayList<>();
 
     public void addResolutionListener(ResolutionListener listener) {
         listeners.add(listener);
