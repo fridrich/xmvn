@@ -29,6 +29,9 @@
     Some goals of these MOJOs are intended to be attached to default
     Maven lifecycle when building packages, others can be called
     directly from Maven command line.</description>
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -80,9 +83,6 @@
         <configuration>
           <goalPrefix>${project.artifactId}</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
-          <requirements>
-            <maven>3.0</maven>
-          </requirements>
         </configuration>
         <executions>
           <execution>
