@@ -20,19 +20,15 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-class Not
-    extends BooleanExpression
-{
+class Not extends BooleanExpression {
     private final BooleanExpression rhs;
 
-    public Not( BooleanExpression rhs )
-    {
+    public Not(BooleanExpression rhs) {
         this.rhs = rhs;
     }
 
     @Override
-    public boolean getValue( ArtifactContext context )
-    {
-        return !rhs.getValue( context );
+    public boolean getValue(ArtifactContext context) {
+        return !rhs.getValue(context);
     }
 }

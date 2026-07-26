@@ -20,19 +20,15 @@ import org.fedoraproject.xmvn.deployer.DeploymentResult;
 /**
  * @author Mikolaj Izdebski
  */
-public class DefaultDeploymentResult
-    implements DeploymentResult
-{
+public class DefaultDeploymentResult implements DeploymentResult {
     private Exception exception;
 
     @Override
-    public Exception getException()
-    {
+    public Exception getException() {
         return exception;
     }
 
-    public void setException( Exception exception )
-    {
+    public void setException(Exception exception) {
         this.exception = exception;
     }
 }

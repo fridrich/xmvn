@@ -20,7 +20,6 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-abstract class BooleanExpression
-{
-    public abstract boolean getValue( ArtifactContext context );
+abstract class BooleanExpression {
+    public abstract boolean getValue(ArtifactContext context);
 }

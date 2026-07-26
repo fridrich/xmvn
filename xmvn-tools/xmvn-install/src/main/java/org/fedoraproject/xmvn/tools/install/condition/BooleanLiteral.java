@@ -20,19 +20,15 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-class BooleanLiteral
-    extends BooleanExpression
-{
+class BooleanLiteral extends BooleanExpression {
     private final boolean value;
 
-    public BooleanLiteral( boolean value )
-    {
+    public BooleanLiteral(boolean value) {
         this.value = value;
     }
 
     @Override
-    public boolean getValue( ArtifactContext context )
-    {
+    public boolean getValue(ArtifactContext context) {
         return value;
     }
 }

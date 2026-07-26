@@ -20,12 +20,9 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-class GroupId
-    extends StringExpression
-{
+class GroupId extends StringExpression {
     @Override
-    public String getValue( ArtifactContext context )
-    {
+    public String getValue(ArtifactContext context) {
         return context.getArtifact().getGroupId();
     }
 }

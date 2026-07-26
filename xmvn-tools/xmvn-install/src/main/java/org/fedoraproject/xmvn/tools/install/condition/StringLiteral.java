@@ -20,19 +20,15 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-class StringLiteral
-    extends StringExpression
-{
+class StringLiteral extends StringExpression {
     private final String value;
 
-    public StringLiteral( String value )
-    {
+    public StringLiteral(String value) {
         this.value = value;
     }
 
     @Override
-    public String getValue( ArtifactContext context )
-    {
+    public String getValue(ArtifactContext context) {
         return value;
     }
 }

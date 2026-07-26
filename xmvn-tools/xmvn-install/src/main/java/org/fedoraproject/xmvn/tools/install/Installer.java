@@ -20,8 +20,7 @@ import java.io.IOException;
 /**
  * @author Mikolaj Izdebski
  */
-public interface Installer
-{
-    InstallationResult install( InstallationRequest request )
-        throws ArtifactInstallationException, IOException;
+public interface Installer {
+    InstallationResult install(InstallationRequest request)
+            throws ArtifactInstallationException, IOException;
 }

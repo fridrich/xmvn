@@ -20,7 +20,6 @@ import org.fedoraproject.xmvn.repository.ArtifactContext;
 /**
  * @author Mikolaj Izdebski
  */
-abstract class StringExpression
-{
-    public abstract String getValue( ArtifactContext context );
+abstract class StringExpression {
+    public abstract String getValue(ArtifactContext context);
 }

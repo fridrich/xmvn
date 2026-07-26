@@ -20,17 +20,13 @@ import java.util.List;
 /**
  * @author Mikolaj Izdebski
  */
-class Or
-    extends BooleanOperator
-{
-    public Or( List<BooleanExpression> children )
-    {
-        super( false, children );
+class Or extends BooleanOperator {
+    public Or(List<BooleanExpression> children) {
+        super(false, children);
     }
 
     @Override
-    protected boolean evaluate( boolean lhs, boolean rhs )
-    {
+    protected boolean evaluate(boolean lhs, boolean rhs) {
         return lhs | rhs;
     }
 }

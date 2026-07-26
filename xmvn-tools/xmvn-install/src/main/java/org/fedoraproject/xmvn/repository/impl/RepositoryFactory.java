@@ -16,36 +16,38 @@
 package org.fedoraproject.xmvn.repository.impl;
 
 import java.util.Properties;
-
-import org.w3c.dom.Element;
-
 import org.fedoraproject.xmvn.repository.Repository;
+import org.w3c.dom.Element;
 
 /**
  * @author Mikolaj Izdebski
  */
-interface RepositoryFactory
-{
+interface RepositoryFactory {
     /**
-     * Create a resolver instance configured with given set of properties and repository-specific XML configuration.
-     * <p>
-     * The meaning of properties and XML configuration is dependent on particular repository implementation.
-     * 
+     * Create a resolver instance configured with given set of properties and repository-specific
+     * XML configuration.
+     *
+     * <p>The meaning of properties and XML configuration is dependent on particular repository
+     * implementation.
+     *
      * @param filter
      * @param properties
      * @param configuration
      */
-    Repository getInstance( Element filter, Properties properties, Element configuration );
+    Repository getInstance(Element filter, Properties properties, Element configuration);
 
     /**
-     * Create a resolver instance configured with given set of properties and repository-specific XML configuration.
-     * <p>
-     * The meaning of properties and XML configuration is dependent on particular repository implementation.
-     * 
+     * Create a resolver instance configured with given set of properties and repository-specific
+     * XML configuration.
+     *
+     * <p>The meaning of properties and XML configuration is dependent on particular repository
+     * implementation.
+     *
      * @param filter
      * @param properties
      * @param configuration
      * @param namespace
      */
-    Repository getInstance( Element filter, Properties properties, Element configuration, String namespace );
+    Repository getInstance(
+            Element filter, Properties properties, Element configuration, String namespace);
 }

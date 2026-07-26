@@ -16,20 +16,15 @@
 package org.fedoraproject.xmvn.repository.impl;
 
 import java.util.Properties;
-
-import org.w3c.dom.Element;
-
 import org.fedoraproject.xmvn.repository.Repository;
+import org.w3c.dom.Element;
 
 /**
  * @author Mikolaj Izdebski
  */
-abstract class AbstractRepositoryFactory
-    implements RepositoryFactory
-{
+abstract class AbstractRepositoryFactory implements RepositoryFactory {
     @Override
-    public Repository getInstance( Element filter, Properties properties, Element configuration )
-    {
-        return getInstance( filter, properties, configuration, "" );
+    public Repository getInstance(Element filter, Properties properties, Element configuration) {
+        return getInstance(filter, properties, configuration, "");
     }
 }
